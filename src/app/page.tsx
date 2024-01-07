@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen bg-white p-4 pt-0">
-      <div className="flex flex-col gap-6 ml-auto mr-auto">
+      <div className="flex flex-col gap-6 w-full mx-auto max-w-screen-xl">
         <ArticleSection posts={postsSections[0]} featureFirst />
         {postsSections[1].length > 0 && (
           <ArticleSection

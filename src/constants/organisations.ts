@@ -39,7 +39,7 @@ export const ORGANISATIONS: Organisation[] = [
   },
   {
     name: 'Echo Generacji',
-    tag: '#echo-generacji',
+    tag: '#echo-generacji-redakcja',
     logo: {
       light: egLight,
       dark: egDark,

@@ -1,4 +1,4 @@
 export const IMAGE_SIZE = {
   FEATURED: 600,
-  REGULAR: 100,
+  REGULAR: 300,
 };
