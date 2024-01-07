@@ -17,6 +17,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "sass": "^1.69.7",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {

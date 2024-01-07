@@ -33,6 +33,7 @@ export const getSingleArticle = async ({
       'id,slug,title,feature_image,primary_tag,excerpt,updated_at,primary_author',
     order: 'published_at DESC',
     filter: `slug:${slug}`,
+    formats: 'html',
   });
 
   return {

@@ -12,6 +12,7 @@ interface GhostParams {
   limit?: number;
   order?: string;
   filter?: string;
+  formats?: string;
 }
 
 const replaceHttpProtocol = <T>(obj: T): T => {
