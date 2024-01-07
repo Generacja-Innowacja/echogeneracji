@@ -1,3 +1,4 @@
+import { paths } from '@/constants/paths';
 import Button from '@/shared/Button';
 import Link from 'next/link';
 
@@ -13,7 +14,7 @@ export default function NotFound() {
           niedowiarkom! Mówimy: to jest nasz błąd, przez nas zrobiony i to nie
           jest nasze ostatnie słowo!
         </p>
-        <Link href="/">
+        <Link href={paths.home}>
           <Button type="primary">Strona główna</Button>
         </Link>
       </div>

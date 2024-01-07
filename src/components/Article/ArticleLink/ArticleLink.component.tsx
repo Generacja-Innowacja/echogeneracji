@@ -25,7 +25,7 @@ interface Props {
 const ArticleLink: React.FC<Props> = ({ post, featured }) => {
   const { title, primary_tag, feature_image, slug } = post;
   const imageSize = featured ? IMAGE_SIZE.FEATURED : IMAGE_SIZE.REGULAR;
-  const [featureImageSrc, setFeatureImageSrc] = useState<any>(
+  const [featuredImageSrc, setfeaturedImageSrc] = useState<any>(
     getResizedGhostImageUrl(feature_image, imageSize) || placeholderImage
   );
 
@@ -48,7 +48,7 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
         style={
           featured
             ? {
-                background: `linear-gradient(180deg, rgba(11, 24, 53, 0.25) 0%, #0B1835 100%),url(${featureImageSrc}),url(/_next/image?url=${featureImageSrc}&q=1&w=16),linear-gradient(180deg, #0B1835 100%, #0B1835 100%)`,
+                background: `linear-gradient(180deg, rgba(17, 16, 45, 0.25) 0%, #11102D 100%),url(${featuredImageSrc}),url(/_next/image?url=${featuredImageSrc}&q=1&w=16),linear-gradient(180deg, #11102D 100%, #11102D 100%)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }
@@ -64,14 +64,14 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
           >
             {title}
           </h2>
-          {featureImageSrc && !featured && (
+          {featuredImageSrc && !featured && (
             <Image
               className="rounded-lg object-cover w-[64px] h-[64px] shrink-0"
               height={64}
               width={64}
-              src={featureImageSrc}
+              src={featuredImageSrc}
               alt={`${title}`}
-              onError={() => setFeatureImageSrc(placeholderImage)}
+              onError={() => setfeaturedImageSrc(placeholderImage)}
               quality={90}
               placeholder="blur"
               blurDataURL={GRAY_PLACEHOLDER}

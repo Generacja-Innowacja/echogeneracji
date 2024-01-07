@@ -28,14 +28,17 @@ const Header: React.FC = () => {
   return (
     <div className="p-4 flex justify-center flex-col max-w-screen-xl ml-auto mr-auto w-full">
       <div className="w-full flex justify-between items-center">
-        <Image
-          src={logoVioletBlack}
-          alt="echo generacji"
-          height={32}
-          width={184}
-          loading="eager"
-          className="mr-2"
-        />
+        <Link href={paths.home}>
+          <Image
+            src={logoVioletBlack}
+            alt="echo generacji"
+            height={32}
+            width={184}
+            loading="eager"
+            className="mr-2"
+            priority
+          />
+        </Link>
         <div className="flex gap-4 items-center">
           <div className="hidden lg:flex gap-2 items-center">{tagsLinks}</div>
           <Link href={paths.join}>

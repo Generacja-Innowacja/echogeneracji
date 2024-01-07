@@ -19,9 +19,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  ...props
 }: {
   children: React.ReactNode;
 }) {
+  console.log({ props });
+
   return (
     <html lang="pl">
       <body className={twMerge(poppins.className, 'w-100')}>

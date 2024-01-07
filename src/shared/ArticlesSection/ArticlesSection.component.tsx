@@ -1,5 +1,5 @@
 import sectionIcon from '@/assets/svg/section-icon.svg';
-import ArticleLink from '@/components/ArticleLink';
+import ArticleLink from '@/components/Article/ArticleLink';
 import { PostOrPage } from '@tryghost/content-api';
 import Image from 'next/image';
 import * as React from 'react';
