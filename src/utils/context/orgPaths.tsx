@@ -11,7 +11,10 @@ interface OrgPathsContext {
   setPathOrgTag: ({ path, tag }: { path: Path; tag: OrgTag }) => void;
 }
 
-export const OrgPathsContext = createContext<OrgPathsContext>({});
+export const OrgPathsContext = createContext<OrgPathsContext>({
+  paths: {},
+  setPathOrgTag: () => {},
+});
 
 export default function OrgPathsProvider({
   children,
