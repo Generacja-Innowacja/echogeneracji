@@ -2,8 +2,17 @@ import ArticleSection from '@/components/Article/ArticlesSection';
 import { getNewestPostsPreview } from '@/service/ghost';
 import { CTASection } from '@/shared/CTASection';
 
-export default async function Home() {
-  const { posts } = await getNewestPostsPreview({ limit: 17 });
+type Props = {
+  params: { tag: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function TagArticles({ params }: Props) {
+  const { tag } = params;
+  const { posts } = await getNewestPostsPreview({
+    limit: 17,
+    filter: `tag:${tag}`,
+  });
   const postsSections = [
     posts.slice(0, 5),
     posts.slice(5, 11),

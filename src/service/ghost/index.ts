@@ -3,10 +3,12 @@ import { fetchPostsOrPages } from './utils';
 
 interface GetNewestPostsPreviewArgs {
   limit: number;
+  filter?: string;
 }
 
 export const getNewestPostsPreview = async ({
   limit,
+  filter,
 }: GetNewestPostsPreviewArgs): Promise<{
   posts: PostOrPage[];
 }> =>
@@ -15,6 +17,7 @@ export const getNewestPostsPreview = async ({
     include: 'tags',
     fields: 'id,slug,title,feature_image,primary_tag,excerpt',
     order: 'published_at DESC',
+    filter,
   });
 
 interface GetSingleArticleArgs {

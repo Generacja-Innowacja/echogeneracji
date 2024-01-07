@@ -48,7 +48,9 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
         style={
           featured
             ? {
-                background: `linear-gradient(180deg, rgba(17, 16, 45, 0.25) 0%, #11102D 100%),url(${featuredImageSrc}),url(/_next/image?url=${featuredImageSrc}&q=1&w=16),linear-gradient(180deg, #11102D 100%, #11102D 100%)`,
+                background: `linear-gradient(180deg, rgba(17, 16, 45, 0.25) 0%, #11102D 100%),url(${featuredImageSrc}),url(/_next/image?url=${encodeURIComponent(
+                  featuredImageSrc || ''
+                )}&q=1&w=16),linear-gradient(180deg, #11102D 100%, #11102D 100%)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }

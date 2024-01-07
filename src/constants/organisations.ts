@@ -19,7 +19,7 @@ import yceLight from '@/assets/svg/organisations/yce_light.svg';
 import paradygmatDark from '@/assets/svg/organisations/paradygmat_dark.svg';
 import paradygmatLight from '@/assets/svg/organisations/paradygmat_light.svg';
 
-interface Organisation {
+export interface Organisation {
   name: string;
   tag: string;
   logo: {

@@ -1,19 +1,18 @@
 'use server';
 
-import logoVioletBlack from '@/assets/svg/logo_violet-black.svg';
 import { paths } from '@/constants/paths';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import Button from '../Button';
+import { HeaderLogo } from './HeaderLogo';
 
 library.add(faPlus);
 
 const Header: React.FC = () => {
-  const promotedTags = ['polityka', 'wybory', 'kultura', 'mlodzi', 'felieton'];
+  const promotedTags = (process.env.PROMOTED_TAGS || '').split(',');
 
   const tagsLinks = promotedTags.map((tag) => (
     <Link
@@ -28,17 +27,7 @@ const Header: React.FC = () => {
   return (
     <div className="p-4 flex justify-center flex-col max-w-screen-xl ml-auto mr-auto w-full">
       <div className="w-full flex justify-between items-center">
-        <Link href={paths.home}>
-          <Image
-            src={logoVioletBlack}
-            alt="echo generacji"
-            height={32}
-            width={184}
-            loading="eager"
-            className="mr-2"
-            priority
-          />
-        </Link>
+        <HeaderLogo />
         <div className="flex gap-4 items-center">
           <div className="hidden lg:flex gap-2 items-center">{tagsLinks}</div>
           <Link href={paths.join}>

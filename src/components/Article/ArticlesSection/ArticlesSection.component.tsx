@@ -1,5 +1,6 @@
 import sectionIcon from '@/assets/svg/section-icon.svg';
 import ArticleLink from '@/components/Article/ArticleLink';
+import { EmptySection } from '@/shared/EmptySection';
 import { PostOrPage } from '@tryghost/content-api';
 import Image from 'next/image';
 import * as React from 'react';
@@ -8,13 +9,23 @@ interface Props {
   posts: PostOrPage[];
   featureFirst?: boolean;
   title?: React.ReactNode;
+  ifEmpty: 'hide' | 'showEmptySection';
 }
 
 export const ArticleSection: React.FC<Props> = ({
   posts,
   title,
   featureFirst,
+  ifEmpty,
 }) => {
+  if (posts.length === 0 && ifEmpty === 'hide') {
+    return null;
+  }
+
+  if (posts.length === 0 && ifEmpty === 'showEmptySection') {
+    return <EmptySection />;
+  }
+
   return (
     <section className="max-w-screen-xl flex flex-col">
       {title && (
