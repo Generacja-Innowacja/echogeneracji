@@ -13,17 +13,15 @@ import Button from '../Button';
 library.add(faPlus);
 
 const Header: React.FC = () => {
-  const promotedHashtags = [
-    '#polityka',
-    '#wybory',
-    '#kultura',
-    '#młodzi',
-    '#felieton',
-  ];
+  const promotedTags = ['polityka', 'wybory', 'kultura', 'mlodzi', 'felieton'];
 
-  const hashtagsLinks = promotedHashtags.map((hashtag) => (
-    <Link key={hashtag} href="#" className="text-darkgray font-bold uppercase">
-      {hashtag}
+  const tagsLinks = promotedTags.map((tag) => (
+    <Link
+      key={tag}
+      href={paths.tagArticles(tag)}
+      className="text-darkgray font-bold uppercase"
+    >
+      #{tag}
     </Link>
   ));
 
@@ -39,9 +37,7 @@ const Header: React.FC = () => {
           className="mr-2"
         />
         <div className="flex gap-4 items-center">
-          <div className="hidden lg:flex gap-2 items-center">
-            {hashtagsLinks}
-          </div>
+          <div className="hidden lg:flex gap-2 items-center">{tagsLinks}</div>
           <Link href={paths.join}>
             <Button type="tertiary">
               Dołącz
@@ -53,7 +49,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className="pt-4 w-full overflow-x-auto overflow-y-hidden flex gap-2 lg:hidden">
-        {hashtagsLinks}
+        {tagsLinks}
       </div>
     </div>
   );

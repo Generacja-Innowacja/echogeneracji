@@ -43,7 +43,7 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
         className={twMerge(
           'p-4 gap-4 flex h-full flex-col rounded-2xl',
           !featured && 'bg-lightgray border border-black/5 justify-between',
-          featured && 'justify-end'
+          featured && 'justify-end min-h-[280px] h-[max(280px,100%)] lg:h-full'
         )}
         style={
           featured

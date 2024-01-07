@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   const { logo: defaultLogo, name: defaultName } = PLATFORM_ORGANISATION;
 
   return (
-    <footer className="w-100 bg-lightgray">
+    <footer className="w-100 bg-lightgray mt-4">
       <div className="max-w-screen-xl mx-auto px-6 py-8 flex flex-col gap-4">
         <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between items-center">
           <Image src={defaultLogo.dark} alt={defaultName} height={32} />
@@ -21,9 +21,9 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className="bg-gray/25 w-100 h-[1px]" />
-        <div className="flex  justify-center sm:justify-start gap-2 items-center mix-blend-luminosity opacity-25 flex-wrap">
-          {ORGANISATIONS_WITHOUT_PLATFORM.map(({ logo, name, id }) => (
-            <Link key={id} href={paths.orgArticles(id)}>
+        <div className="flex justify-center sm:justify-start gap-2 items-center mix-blend-luminosity opacity-25 flex-wrap">
+          {ORGANISATIONS_WITHOUT_PLATFORM.map(({ logo, name, tag }) => (
+            <Link key={tag} href={paths.orgArticles(tag)}>
               <Image src={logo.dark} alt={name} title={name} />
             </Link>
           ))}
