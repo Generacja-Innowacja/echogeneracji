@@ -20,11 +20,7 @@ export const ArticleAuthor: React.FC<Props> = ({ author }) => {
       <div className="flex">
         <div>
           <div className="font-bold text-lg">{author.name}</div>
-          <div>
-            {author.bio}Tortor accumsan turpis, sed bibendum nulla diam nec ex.
-            Vivamus ultricies varius orci. Morbi dictum enim ligula, nec
-            malesuada orci auctor commodo.
-          </div>
+          {author.bio && <div>{author.bio}</div>}
         </div>
         <div className="ml-4">
           {author.profile_image && (

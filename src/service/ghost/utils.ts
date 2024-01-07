@@ -4,6 +4,7 @@ import {
   DEFAULT_FILTER,
   PUBLIC_KEY,
 } from '@/constants/ghost';
+import { FIVE_MINUTES } from '@/constants/number';
 import { PostOrPage } from '@tryghost/content-api';
 
 interface GhostParams {
@@ -56,7 +57,10 @@ export const fetchPostsOrPages = async (
       ...params,
       filter: `${DEFAULT_FILTER}${params.filter ? `+${params.filter}` : ''}`,
     });
-    const res = await fetch(url, { headers: BASE_HEADERS });
+    const res = await fetch(url, {
+      headers: BASE_HEADERS,
+      next: { revalidate: FIVE_MINUTES },
+    });
     const posts = await res.json();
 
     return normalizeObject(posts);

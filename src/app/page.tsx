@@ -14,23 +14,29 @@ export default async function Home() {
     <main className="flex min-h-screen bg-white p-4 pt-0">
       <div className="flex flex-col gap-6 ml-auto mr-auto">
         <ArticleSection posts={postsSections[0]} featureFirst />
-        <ArticleSection
-          posts={postsSections[1]}
-          title={
-            <>
-              <span className="text-lightviolet">Najnowsze</span> na platformie!
-            </>
-          }
-        />
+        {postsSections[1].length > 0 && (
+          <ArticleSection
+            posts={postsSections[1]}
+            title={
+              <>
+                <span className="text-lightviolet">Najnowsze</span> na
+                platformie!
+              </>
+            }
+          />
+        )}
         <CTASection />
-        <ArticleSection
-          posts={postsSections[2]}
-          title={
-            <>
-              <span className="text-lightviolet">Najciekawsze</span> dla Ciebie
-            </>
-          }
-        />
+        {postsSections[2].length > 0 && (
+          <ArticleSection
+            posts={postsSections[2]}
+            title={
+              <>
+                <span className="text-lightviolet">Najciekawsze</span> dla
+                Ciebie
+              </>
+            }
+          />
+        )}
       </div>
     </main>
   );
