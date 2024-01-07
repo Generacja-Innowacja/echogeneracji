@@ -10,7 +10,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({ children, className, type }) => {
   const buttonClassType: Record<ButtonType, string> = {
-    primary: '',
+    primary: 'bg-darkviolet text-white',
     secondary: 'bg-white text-darkviolet',
     tertiary: 'text-darkviolet border border-lightgray',
   };
