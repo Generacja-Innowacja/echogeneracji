@@ -1,11 +1,17 @@
 import { PostOrPage } from '@tryghost/content-api';
 import { fetchPostsOrPages } from './utils';
 
-export const getNewestPostsPreview = async (): Promise<{
+interface GetNewestPostsPreviewArgs {
+  limit: number;
+}
+
+export const getNewestPostsPreview = async ({
+  limit,
+}: GetNewestPostsPreviewArgs): Promise<{
   posts: PostOrPage[];
 }> =>
   fetchPostsOrPages({
-    limit: 10,
+    limit,
     include: 'tags',
     fields: 'id,slug,title,feature_image,primary_tag,excerpt',
     order: 'published_at DESC',

@@ -8,6 +8,7 @@ import adpDark from '@/assets/svg/organisations/adpersonam_dark.svg';
 import adpLight from '@/assets/svg/organisations/adpersonam_light.svg';
 
 interface Organisation {
+  id: string;
   name: string;
   tag: string;
   logo: {
@@ -18,6 +19,7 @@ interface Organisation {
 
 export const ORGANISATIONS: Organisation[] = [
   {
+    id: 'mypolitics',
     name: 'myPolitics',
     tag: '#mypolitics',
     logo: {
@@ -26,6 +28,7 @@ export const ORGANISATIONS: Organisation[] = [
     },
   },
   {
+    id: 'echo-generacji',
     name: 'Echo Generacji',
     tag: '#echo-generacji',
     logo: {
@@ -34,6 +37,7 @@ export const ORGANISATIONS: Organisation[] = [
     },
   },
   {
+    id: 'ad-personam',
     name: 'Ad Personam',
     tag: '#ad-personam',
     logo: {
@@ -44,3 +48,9 @@ export const ORGANISATIONS: Organisation[] = [
 ];
 
 export const DEFAULT_ORGANISATION = ORGANISATIONS[0];
+
+export const PLATFORM_ORGANISATION = ORGANISATIONS[1];
+
+export const ORGANISATIONS_WITHOUT_PLATFORM = ORGANISATIONS.filter(
+  (o) => o.id !== PLATFORM_ORGANISATION.id
+);

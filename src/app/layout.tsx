@@ -3,6 +3,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
+import { Footer } from '@/shared/Footer';
 import '@/styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'normalize.css';
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={twMerge(poppins.className, 'w-100')}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

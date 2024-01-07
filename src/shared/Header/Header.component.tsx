@@ -1,6 +1,7 @@
 'use server';
 
 import logoVioletBlack from '@/assets/svg/logo_violet-black.svg';
+import { paths } from '@/constants/paths';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,12 +42,14 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex gap-2 items-center">
             {hashtagsLinks}
           </div>
-          <Button>
-            Dołącz
-            <span className="ml-2 hidden sm:inline">
-              <FontAwesomeIcon icon={faPen} />
-            </span>
-          </Button>
+          <Link href={paths.join}>
+            <Button type="tertiary">
+              Dołącz
+              <span className="ml-2 hidden sm:inline">
+                <FontAwesomeIcon icon={faPen} />
+              </span>
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="pt-4 w-full overflow-x-auto overflow-y-hidden flex gap-2 lg:hidden">

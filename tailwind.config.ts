@@ -18,6 +18,13 @@ const config: Config = {
       violet: '#1B193C',
       darkviolet: '#11102D',
     },
+    gridTemplateColumns: {
+      'fill-320px': 'repeat(auto-fill, minmax(320px, 1fr))',
+      'fill-1fr': 'repeat(auto-fill, 1fr)',
+    },
+    gridTemplateRows: {
+      'fill-140px': 'repeat(auto-fill, minmax(140px, 1fr))',
+    },
     extend: {},
   },
   plugins: [],
