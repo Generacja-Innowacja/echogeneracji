@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function OrgArticles({ params }: Props) {
   const { orgtag } = params;
   const { posts } = await getNewestPostsPreview({
-    limit: 50,
+    limit: 100,
     filter: `tag:hash-${orgtag}`,
   });
   const postsSections = [
     posts.slice(0, 5),
     posts.slice(5, 11),
-    posts.slice(11, 17),
+    posts.slice(11),
   ];
   const firstPost = posts[0];
 

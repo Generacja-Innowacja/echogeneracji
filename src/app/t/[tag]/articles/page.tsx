@@ -10,13 +10,13 @@ type Props = {
 export default async function TagArticles({ params }: Props) {
   const { tag } = params;
   const { posts } = await getNewestPostsPreview({
-    limit: 50,
+    limit: 100,
     filter: `tag:${tag}`,
   });
   const postsSections = [
     posts.slice(0, 5),
     posts.slice(5, 11),
-    posts.slice(11, 17),
+    posts.slice(11),
   ];
 
   return (
