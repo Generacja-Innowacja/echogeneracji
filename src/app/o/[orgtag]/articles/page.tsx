@@ -11,7 +11,7 @@ type Props = {
 export default async function OrgArticles({ params }: Props) {
   const { orgtag } = params;
   const { posts } = await getNewestPostsPreview({
-    limit: 17,
+    limit: 50,
     filter: `tag:hash-${orgtag}`,
   });
   const postsSections = [
