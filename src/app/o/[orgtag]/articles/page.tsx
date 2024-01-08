@@ -1,12 +1,25 @@
 import { ArticleOrgPathBus } from '@/components/Article/ArticleOrgPathBus';
 import ArticleSection from '@/components/Article/ArticlesSection';
+import { ORGANISATIONS } from '@/constants/organisations';
 import { getNewestPostsPreview } from '@/service/ghost';
 import { CTASection } from '@/shared/CTASection';
+import { Metadata } from 'next';
 
 type Props = {
   params: { orgtag: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const org = ORGANISATIONS.find(org => org.tag === params.orgtag);
+  if (!org) {
+    return {}
+  }
+
+  return {
+    title: `${org.name} na Echo Generacji`,
+    description: `Sprawdź artykuły opublikowane przez ${org.name}!`,
+  };
 
 export default async function OrgArticles({ params }: Props) {
   const { orgtag } = params;

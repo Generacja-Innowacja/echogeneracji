@@ -34,6 +34,10 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
     return getSingleOrganisationByTag(tag);
   }, [post.tags]);
 
+  const imageStyle = `url(${featuredImageSrc}),url(/_next/image?url=${encodeURIComponent(
+    featuredImageSrc || ''
+  )}&q=1&w=16),`;
+
   return (
     <Link
       href={paths.singleArticle(slug)}
@@ -48,9 +52,9 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
         style={
           featured
             ? {
-                background: `linear-gradient(180deg, rgba(17, 16, 45, 0.25) 0%, #11102D 100%),url(${featuredImageSrc}),url(/_next/image?url=${encodeURIComponent(
-                  featuredImageSrc || ''
-                )}&q=1&w=16),linear-gradient(180deg, #11102D 100%, #11102D 100%)`,
+                background: `linear-gradient(180deg, rgba(17, 16, 45, 0.25) 0%, #11102D 100%),${
+                  feature_image ? imageStyle : ''
+                }linear-gradient(180deg, #11102D 100%, #11102D 100%)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }
@@ -74,7 +78,7 @@ const ArticleLink: React.FC<Props> = ({ post, featured }) => {
               src={featuredImageSrc}
               alt={`${title}`}
               onError={() => setfeaturedImageSrc(placeholderImage)}
-              quality={90}
+              quality={100}
               placeholder="blur"
               blurDataURL={GRAY_PLACEHOLDER}
             />
