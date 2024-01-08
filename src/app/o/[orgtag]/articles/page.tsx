@@ -11,15 +11,16 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const org = ORGANISATIONS.find(org => org.tag === params.orgtag);
+  const org = ORGANISATIONS.find((org) => org.tag === params.orgtag);
   if (!org) {
-    return {}
+    return {};
   }
 
   return {
     title: `${org.name} na Echo Generacji`,
     description: `Sprawdź artykuły opublikowane przez ${org.name}!`,
   };
+}
 
 export default async function OrgArticles({ params }: Props) {
   const { orgtag } = params;
