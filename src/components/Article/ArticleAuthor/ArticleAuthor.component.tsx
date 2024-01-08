@@ -17,7 +17,7 @@ export const ArticleAuthor: React.FC<Props> = ({ author }) => {
     <div className="max-w-screen-sm mx-auto mt-4 sm:mt-6 flex flex-col text-darkviolet bg-lightgray p-4 rounded-2xl">
       <div className="uppercase font-bold opacity-25 mb-2">autor</div>
       <div className="w-full h-[1px] bg-gray opacity-25 mb-4" />
-      <div className="flex">
+      <div className="flex justify-between">
         <div>
           <div className="font-bold text-lg">{author.name}</div>
           {author.bio && <div>{author.bio}</div>}

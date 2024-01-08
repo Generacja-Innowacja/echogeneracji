@@ -1,5 +1,5 @@
 import { PostOrPage } from '@tryghost/content-api';
-import { fetchPostsOrPages } from './utils';
+import { fetchPages, fetchPosts } from './utils';
 
 interface GetNewestPostsPreviewArgs {
   limit: number;
@@ -12,7 +12,7 @@ export const getNewestPostsPreview = async ({
 }: GetNewestPostsPreviewArgs): Promise<{
   posts: PostOrPage[];
 }> =>
-  fetchPostsOrPages({
+  fetchPosts({
     limit,
     include: 'tags',
     fields: 'id,slug,title,feature_image,primary_tag,excerpt',
@@ -29,7 +29,7 @@ export const getSingleArticle = async ({
 }: GetSingleArticleArgs): Promise<{
   post: PostOrPage | undefined;
 }> => {
-  const { posts } = await fetchPostsOrPages({
+  const { posts } = await fetchPosts({
     limit: 1,
     include: 'authors,tags',
     fields:
@@ -41,5 +41,30 @@ export const getSingleArticle = async ({
 
   return {
     post: posts?.[0],
+  };
+};
+
+interface GetSinglePageArgs {
+  slug: string;
+  fields?: string;
+}
+
+export const getSinglePage = async ({
+  slug,
+  fields,
+}: GetSinglePageArgs): Promise<{
+  page: PostOrPage | undefined;
+}> => {
+  const { pages } = await fetchPages({
+    include: 'authors,tags',
+    fields:
+      fields ||
+      'id,slug,title,feature_image,primary_tag,excerpt,updated_at,primary_author',
+    formats: 'html',
+    slug,
+  });
+
+  return {
+    page: pages?.[0],
   };
 };

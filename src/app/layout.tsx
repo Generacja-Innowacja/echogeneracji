@@ -30,6 +30,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    site: '@echogeneracji',
+  },
 };
 
 export default function RootLayout({

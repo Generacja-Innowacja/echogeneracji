@@ -47,7 +47,7 @@ export const getGhostUrl = (baseUrl: string, params: GhostParams): string => {
   return url.toString();
 };
 
-export const fetchPostsOrPages = async (
+export const fetchPosts = async (
   params: GhostParams
 ): Promise<{
   posts: PostOrPage[];
@@ -61,11 +61,35 @@ export const fetchPostsOrPages = async (
       headers: BASE_HEADERS,
       next: { revalidate: FIVE_MINUTES },
     });
-    const posts = await res.json();
+    const postsData = await res.json();
+    const posts = postsData?.posts || [];
 
-    return normalizeObject(posts);
+    return normalizeObject({ posts });
   } catch (e) {
     console.error(e);
     return { posts: [] };
+  }
+};
+
+export const fetchPages = async (
+  params: Omit<GhostParams, 'limit' | 'filter' | 'order'> & { slug: string }
+): Promise<{
+  pages?: PostOrPage[];
+}> => {
+  try {
+    const url = getGhostUrl(`${BASE_URL}/pages/slug/${params.slug}`, {
+      ...params,
+    });
+    const res = await fetch(url, {
+      headers: BASE_HEADERS,
+      next: { revalidate: FIVE_MINUTES },
+    });
+    const pagesData = await res.json();
+    const pages = pagesData?.pages || [];
+
+    return normalizeObject({ pages });
+  } catch (e) {
+    console.error(e);
+    return { pages: [] };
   }
 };
