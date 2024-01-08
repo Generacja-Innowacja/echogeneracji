@@ -8,6 +8,7 @@ import Link from 'next/link';
 import * as React from 'react';
 import Button from '../Button';
 import { HeaderLogo } from './HeaderLogo';
+import { HeaderTag } from './HeaderTag';
 
 library.add(faPlus);
 
@@ -15,13 +16,7 @@ const Header: React.FC = () => {
   const promotedTags = (process.env.PROMOTED_TAGS || '').split(',');
 
   const tagsLinks = promotedTags.map((tag) => (
-    <Link
-      key={tag}
-      href={paths.tagArticles(tag)}
-      className="text-darkgray font-bold uppercase"
-    >
-      #{tag}
-    </Link>
+    <HeaderTag key={tag} tag={tag} />
   ));
 
   return (
