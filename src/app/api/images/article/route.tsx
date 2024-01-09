@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { getSingleArticle } from '@/service/ghost';
+import { getOrgTagFromTags } from '@/utils/getOrgTagFromTags';
 import { PostOrPage } from '@tryghost/content-api';
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
@@ -23,8 +24,8 @@ const getPost = async (url: string): Promise<PostOrPage | undefined> => {
 };
 
 const getData = async (url: string, post: PostOrPage) => {
-  const { searchParams, protocol, host } = new URL(url);
-  const orgTag = searchParams.get('orgtag') || '';
+  const { protocol, host } = new URL(url);
+  const orgTag = (getOrgTagFromTags(post.tags || []) || '').replace('#', '');
 
   const urlPathBase = `${protocol}//${host}`;
   const mainLogoSrc = `${urlPathBase}/svg/logo_violet-white.svg`;
