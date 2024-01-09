@@ -42,6 +42,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={twMerge(poppins.className, 'w-100')}>
         <OrgPathsProvider>
           <Header />
