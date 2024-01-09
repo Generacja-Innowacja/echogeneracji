@@ -25,7 +25,6 @@ export interface Organisation {
   logo: {
     light: string;
     dark: string;
-    lightPublic: string;
   };
 }
 
