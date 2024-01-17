@@ -3,6 +3,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
+import { DOMAIN } from '@/constants/ghost';
 import { Footer } from '@/shared/Footer';
 import '@/styles/globals.css';
 import OrgPathsProvider from '@/utils/context/orgPaths';
@@ -14,6 +15,7 @@ config.autoAddCss = false;
 const poppins = Poppins({ subsets: ['latin-ext'], weight: ['700', '400'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(DOMAIN),
   title: 'Echo Generacji',
   description: 'Platforma publicystyczna nowego pokolenia',
   openGraph: {

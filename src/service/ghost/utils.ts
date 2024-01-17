@@ -1,9 +1,4 @@
-import {
-  BASE_HEADERS,
-  BASE_URL,
-  DEFAULT_FILTER,
-  PUBLIC_KEY,
-} from '@/constants/ghost';
+import { BASE_HEADERS, BASE_URL, DEFAULT_FILTER } from '@/constants/ghost';
 import { FIVE_MINUTES } from '@/constants/number';
 import { PostOrPage } from '@tryghost/content-api';
 
@@ -42,8 +37,6 @@ export const getGhostUrl = (baseUrl: string, params: GhostParams): string => {
     url.searchParams.append(key, value?.toString() || '');
   });
 
-  url.searchParams.append('key', PUBLIC_KEY);
-
   return url.toString();
 };
 
@@ -58,7 +51,7 @@ export const fetchPosts = async (
       filter: `${DEFAULT_FILTER}${params.filter ? `+${params.filter}` : ''}`,
     });
     const res = await fetch(url, {
-      headers: BASE_HEADERS,
+      headers: new Headers(BASE_HEADERS),
       next: { revalidate: FIVE_MINUTES },
     });
     const postsData = await res.json();
