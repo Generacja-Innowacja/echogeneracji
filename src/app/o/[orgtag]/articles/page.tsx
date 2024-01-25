@@ -1,5 +1,6 @@
 import { ArticleOrgPathBus } from '@/components/Article/ArticleOrgPathBus';
 import ArticleSection from '@/components/Article/ArticlesSection';
+import { OrganisationAboutSection } from '@/components/Organisation/OrganisationAboutSection';
 import { ORGANISATIONS } from '@/constants/organisations';
 import { getNewestPostsPreview } from '@/service/ghost';
 import { CTASection } from '@/shared/CTASection';
@@ -35,11 +36,16 @@ export default async function OrgArticles({ params }: Props) {
   ];
   const firstPost = posts[0];
 
+  const organisation = ORGANISATIONS.find((org) => org.tag === `#${orgtag}`);
+
   return (
     <>
       <ArticleOrgPathBus post={firstPost} priorityTag={`#${orgtag}`} />
-      <main className="flex min-h-screen bg-white p-4 pt-0">
+      <main className="flex min-h-screen bg-white p-4 pt-0 overflow-x-hidden">
         <div className="flex flex-col gap-6 w-full mx-auto max-w-screen-xl">
+          {organisation && (
+            <OrganisationAboutSection organisation={organisation} />
+          )}
           <ArticleSection
             posts={postsSections[0]}
             featureFirst

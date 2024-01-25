@@ -52,7 +52,7 @@ export const fetchPosts = async (
     });
     const res = await fetch(url, {
       headers: new Headers(BASE_HEADERS),
-      next: { revalidate: FIVE_MINUTES },
+      next: { revalidate: 1 },
     });
     const postsData = await res.json();
     const posts = postsData?.posts || [];
