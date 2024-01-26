@@ -4,11 +4,13 @@ import { fetchPages, fetchPosts } from './utils';
 interface GetNewestPostsPreviewArgs {
   limit: number;
   filter?: string;
+  asAdmin?: boolean;
 }
 
 export const getNewestPostsPreview = async ({
   limit,
   filter,
+  asAdmin,
 }: GetNewestPostsPreviewArgs): Promise<{
   posts: PostOrPage[];
 }> =>
@@ -18,14 +20,17 @@ export const getNewestPostsPreview = async ({
     fields: 'id,slug,title,feature_image,primary_tag,excerpt',
     order: 'published_at DESC',
     filter,
+    asAdmin,
   });
 
 interface GetSingleArticleArgs {
   slug: string;
+  asAdmin?: boolean;
 }
 
 export const getSingleArticle = async ({
   slug,
+  asAdmin,
 }: GetSingleArticleArgs): Promise<{
   post: PostOrPage | undefined;
 }> => {
@@ -37,6 +42,7 @@ export const getSingleArticle = async ({
     order: 'published_at DESC',
     filter: `slug:${slug}`,
     formats: 'html',
+    asAdmin,
   });
 
   return {
@@ -47,11 +53,13 @@ export const getSingleArticle = async ({
 interface GetSinglePageArgs {
   slug: string;
   fields?: string;
+  asAdmin?: boolean;
 }
 
 export const getSinglePage = async ({
   slug,
   fields,
+  asAdmin,
 }: GetSinglePageArgs): Promise<{
   page: PostOrPage | undefined;
 }> => {
@@ -62,6 +70,7 @@ export const getSinglePage = async ({
       'id,slug,title,feature_image,primary_tag,excerpt,updated_at,primary_author',
     formats: 'html',
     slug,
+    asAdmin,
   });
 
   return {

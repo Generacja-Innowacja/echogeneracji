@@ -3,8 +3,10 @@ import * as jwt from 'jsonwebtoken';
 export const DOMAIN = 'https://echogeneracji.pl';
 
 export const EDITOR_DOMAIN = 'https://editor.gi.org.pl';
-export const BASE_URL = `${EDITOR_DOMAIN}/ghost/api/admin`;
+export const BASE_URL_ADMIN = `${EDITOR_DOMAIN}/ghost/api/admin`;
+export const BASE_URL = `${EDITOR_DOMAIN}/ghost/api/content`;
 export const PRIVATE_KEY = process.env.GHOST_KEY || '';
+export const PUBLIC_KEY = process.env.GHOST_PUBLIC_KEY || '';
 export const VERSION = 'v5.0';
 const [PRIVATE_KEY_ID, PRIVATE_KEY_SECRET] = PRIVATE_KEY.split(':');
 
@@ -23,6 +25,10 @@ export const GHOST_ADMIN_TOKEN = jwt.sign(
 
 export const BASE_HEADERS = {
   'Accept-Version': VERSION,
-  Authorization: `Ghost ${GHOST_ADMIN_TOKEN}`,
   Origin: EDITOR_DOMAIN,
+};
+
+export const BASE_HEADERS_ADMIN = {
+  ...BASE_HEADERS,
+  Authorization: `Ghost ${GHOST_ADMIN_TOKEN}`,
 };

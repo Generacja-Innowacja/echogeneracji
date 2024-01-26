@@ -19,7 +19,7 @@ const checkIfIsAuthorized = (url: string): boolean => {
 const getPost = async (url: string): Promise<PostOrPage | undefined> => {
   const { searchParams } = new URL(url);
   const slug = searchParams.get('slug') || '';
-  const { post } = await getSingleArticle({ slug });
+  const { post } = await getSingleArticle({ slug, asAdmin: true });
   return post;
 };
 
