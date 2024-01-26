@@ -7,6 +7,7 @@ export const BASE_URL_ADMIN = `${EDITOR_DOMAIN}/ghost/api/admin`;
 export const BASE_URL = `${EDITOR_DOMAIN}/ghost/api/content`;
 export const PRIVATE_KEY = process.env.GHOST_KEY || '';
 export const PUBLIC_KEY = process.env.GHOST_PUBLIC_KEY || '';
+export const GHOST_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || '';
 export const VERSION = 'v5.0';
 const [PRIVATE_KEY_ID, PRIVATE_KEY_SECRET] = PRIVATE_KEY.split(':');
 

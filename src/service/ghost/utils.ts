@@ -8,6 +8,7 @@ import {
 } from '@/constants/ghost';
 import { FIVE_MINUTES } from '@/constants/number';
 import { PostOrPage } from '@tryghost/content-api';
+import { postGhostErrorMessage } from '../discord/postErrorMessage';
 
 interface GhostParams {
   include?: string;
@@ -77,6 +78,7 @@ export const fetchPosts = async ({
     return normalizeObject({ posts });
   } catch (e) {
     console.error(e);
+    await postGhostErrorMessage(e);
     return { posts: [] };
   }
 };
@@ -104,6 +106,7 @@ export const fetchPages = async ({
     return normalizeObject({ pages });
   } catch (e) {
     console.error(e);
+    await postGhostErrorMessage(e);
     return { pages: [] };
   }
 };
