@@ -101,6 +101,7 @@ export const ORGANISATIONS: Organisation[] = [
         'Polityka minuta po minucie — od młodych dla młodych o tym, co ważne!',
       wwwUrl: 'https://politicsnow.org.pl/',
       joinUrl: 'https://politicsnow.org.pl/dolacz-do-nas/',
+      aboutUrl: 'https://politicsnow.org.pl/o-nas/',
       socialUrls: {
         facebook: 'https://www.facebook.com/politicsnowmedia',
         twitter: 'https://twitter.com/politicsnow__',
