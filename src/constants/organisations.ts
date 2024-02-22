@@ -137,8 +137,12 @@ export const ORGANISATIONS: Organisation[] = [
       dark: yceDark,
     },
     meta: {
-      description: 'Przyszłość Europy zależy od nas - młodych ludzi!',
+      description: 'Rozpoczynamy otwartą dyskuję o sprawach europejskich',
+      aboutUrl: 'https://www.ycepoland.pl/kim-jeste%C5%9Bmy',
+      joinUrl: 'https://www.ycepoland.pl/kontakt',
+      wwwUrl: 'https://www.ycepoland.pl/',
       socialUrls: {
+        instagram: 'https://www.instagram.com/yce.poland/',
         facebook: 'https://www.facebook.com/profile.php?id=100091536763744',
         linkedin: 'https://www.linkedin.com/company/yce-poland/',
       },
