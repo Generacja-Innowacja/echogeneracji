@@ -19,6 +19,12 @@ import yceLight from '@/assets/svg/organisations/yce_light.svg';
 import paradygmatDark from '@/assets/svg/organisations/paradygmat_dark.svg';
 import paradygmatLight from '@/assets/svg/organisations/paradygmat_light.svg';
 
+import gadkaDark from '@/assets/svg/organisations/gadka_dark.svg';
+import gadkaLight from '@/assets/svg/organisations/gadka_light.svg';
+
+import holisticDark from '@/assets/svg/organisations/holistic_dark.svg';
+import holisticLight from '@/assets/svg/organisations/holistic_light.svg';
+
 export interface OrganisationSocialUrls {
   facebook?: string;
   twitter?: string;
@@ -164,6 +170,44 @@ export const ORGANISATIONS: Organisation[] = [
         instagram:
           'https://www.instagram.com/sknparadygmat?igsh=MWhiMzN4dDd1ZWQzYQ==',
         linkedin: 'https://www.linkedin.com/company/sknparadygmat/',
+      },
+    },
+  },
+  {
+    name: 'Holistic News',
+    tag: '#holistic-news',
+    logo: {
+      light: holisticLight,
+      dark: holisticDark,
+    },
+    meta: {
+      description:
+        'W Holistic News szukamy Prawdy i Dobra. Zadajemy pytania i próbujemy na nie odpowiadać. Piszemy o tym, co uważamy za ważne.',
+      aboutUrl: 'https://holistic.news/redakcja/',
+      wwwUrl: 'https://holistic.news/',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/portalHolisticNews/',
+        twitter: 'https://x.com/news_holistic',
+        instagram: 'https://www.instagram.com/holisticnews/',
+        linkedin: 'https://www.linkedin.com/company/holisticnews/',
+      },
+    },
+  },
+  {
+    name: 'Gadka Senacka',
+    tag: '#gadka-senacka',
+    logo: {
+      light: gadkaLight,
+      dark: gadkaDark,
+    },
+    meta: {
+      description:
+        'Tworzymy przestrzeń do swobodnej rozmowy w Senacie RP. Szerzymy świadomość i edukujemy przez debaty młodych ekspertów i polityków.',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/profile.php?id=100076762762519',
+        twitter: 'https://twitter.com/GadkaSenacka',
+        instagram: 'https://www.instagram.com/gadka_senacka/',
+        linkedin: 'https://www.linkedin.com/company/gadka-senacka/',
       },
     },
   },
