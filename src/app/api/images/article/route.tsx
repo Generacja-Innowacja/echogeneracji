@@ -66,6 +66,10 @@ export async function GET({ url }: NextRequest) {
     post
   );
 
+  const isImageUnsupportedType = ['.webp'].some((type) =>
+    bgImageSrc.endsWith(type)
+  );
+
   return new ImageResponse(
     (
       <div
@@ -76,11 +80,13 @@ export async function GET({ url }: NextRequest) {
           background: '#11102D',
         }}
       >
-        <img
-          src={bgImageSrc}
-          alt=""
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+        {!isImageUnsupportedType && (
+          <img
+            src={bgImageSrc}
+            alt=""
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        )}
         <div
           style={{
             width: '100%',
