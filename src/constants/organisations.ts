@@ -22,8 +22,23 @@ import paradygmatLight from '@/assets/svg/organisations/paradygmat_light.svg';
 import gadkaDark from '@/assets/svg/organisations/gadka_dark.svg';
 import gadkaLight from '@/assets/svg/organisations/gadka_light.svg';
 
+import knposuwLight from '@/assets/svg/organisations/knposuw_dark.svg';
+import knposuwDark from '@/assets/svg/organisations/knposuw_light.svg';
+
+import knppuwLight from '@/assets/svg/organisations/knppuw_dark.svg';
+import knppuwDark from '@/assets/svg/organisations/knppuw_light.svg';
+
+import elsawwaLight from '@/assets/svg/organisations/elsawwa_dark.svg';
+import elsawwaDark from '@/assets/svg/organisations/elsawwa_light.svg';
+
+import fmdLight from '@/assets/svg/organisations/fmd_dark.svg';
+import fmdDark from '@/assets/svg/organisations/fmd_light.svg';
+
 import holisticDark from '@/assets/svg/organisations/holistic_dark.svg';
 import holisticLight from '@/assets/svg/organisations/holistic_light.svg';
+
+import yecLight from '@/assets/svg/organisations/yec_dark.svg';
+import yecDark from '@/assets/svg/organisations/yec_light.svg';
 
 export interface OrganisationSocialUrls {
   facebook?: string;
@@ -208,6 +223,93 @@ export const ORGANISATIONS: Organisation[] = [
         twitter: 'https://twitter.com/GadkaSenacka',
         instagram: 'https://www.instagram.com/gadka_senacka/',
         linkedin: 'https://www.linkedin.com/company/gadka-senacka/',
+      },
+    },
+  },
+  {
+    name: 'Koło Naukowe Prawa Podatkowego - WPiA UW',
+    tag: '#knppuw',
+    logo: {
+      light: knppuwLight,
+      dark: knppuwDark,
+    },
+    meta: {
+      description: 'Zachęcamy wszystkich zainteresowanych do działania!',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/KNPP.UW/?locale=pl_PL',
+        linkedin:
+          'https://www.linkedin.com/company/ko%C5%82o-naukowe-prawa-podatkowego-wpia-uw/',
+      },
+    },
+  },
+  {
+    name: 'Forum Młodych Dyplomatów',
+    tag: '#fmd',
+    logo: {
+      light: fmdLight,
+      dark: fmdDark,
+    },
+    meta: {
+      description: 'Kreujemy przyszłych liderów dla Polski i świata',
+      wwwUrl: 'https://diplomacy.pl/',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/ForumMlodychDyplomatow',
+        twitter: 'https://twitter.com/DiplomacyFMD',
+        instagram: 'https://www.instagram.com/diplomacyfmd/',
+        linkedin:
+          'https://pl.linkedin.com/company/polish-forum-of-young-diplomats-forum-m%C5%82odych-dyplomat%C3%B3w',
+      },
+    },
+  },
+  {
+    name: 'Youth Entrepreneurial Community',
+    tag: '#yec',
+    logo: {
+      light: yecLight,
+      dark: yecDark,
+    },
+    meta: {
+      description: "Students' business & innovation hub",
+      wwwUrl: 'https://yecommunity.pl/',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/profile.php?id=61551247504010',
+        instagram: 'https://www.instagram.com/yec_official_/',
+        linkedin:
+          'https://www.linkedin.com/company/youth-entrepreneurial-community/',
+      },
+    },
+  },
+  {
+    name: 'Elsa Warszawa',
+    tag: '#elsa-wwa',
+    logo: {
+      light: elsawwaLight,
+      dark: elsawwaDark,
+    },
+    meta: {
+      description: 'Europejskie Stowarzyszenie Studentów Prawa ELSA Warszawa',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/elsawarszawa/?locale=pl_PL',
+        instagram: 'https://www.instagram.com/elsa_warszawa/',
+        linkedin:
+          'https://www.linkedin.com/company/elsa-warszawa/?originalSubdomain=pl',
+      },
+    },
+  },
+  {
+    name: 'Koło Naukowe Prawa Ochrony Środowiska WPiA UW',
+    tag: '#knposuw',
+    logo: {
+      light: knposuwLight,
+      dark: knposuwDark,
+    },
+    meta: {
+      description:
+        'Koło Naukowe działające przy Wydziale Prawa i Administracji Uniwersytetu Warszawskiego',
+      socialUrls: {
+        facebook: 'https://www.facebook.com/KoloNaukowePrawaOchronySrodowiska/',
+        linkedin:
+          'https://www.linkedin.com/company/ko%C5%82o-naukowe-prawa-ochrony-%C5%9Brodowiska/?',
       },
     },
   },
