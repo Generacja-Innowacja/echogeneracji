@@ -151,7 +151,7 @@ export const ORGANISATIONS: Organisation[] = [
     },
   },
   {
-    name: 'YCE Poland',
+    name: 'Europe Matters',
     tag: '#yce-poland',
     logo: {
       light: yceLight,
@@ -163,9 +163,9 @@ export const ORGANISATIONS: Organisation[] = [
       joinUrl: 'https://www.ycepoland.pl/kontakt',
       wwwUrl: 'https://www.ycepoland.pl/',
       socialUrls: {
-        instagram: 'https://www.instagram.com/yce.poland/',
+        instagram: 'https://www.instagram.com/em.poland/',
         facebook: 'https://www.facebook.com/profile.php?id=100091536763744',
-        linkedin: 'https://www.linkedin.com/company/yce-poland/',
+        linkedin: 'https://www.linkedin.com/company/em-poland/',
       },
     },
   },
