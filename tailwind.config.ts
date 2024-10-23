@@ -17,6 +17,8 @@ const config: Config = {
       lightviolet: '#42419D',
       violet: '#1B193C',
       darkviolet: '#11102D',
+      darkblue: '#211F4C',
+      verydarkblue: '#020414',
     },
     gridTemplateColumns: {
       'fill-320px': 'repeat(auto-fill, minmax(320px, 1fr))',
