@@ -1,0 +1,1 @@
+export { PillarsBanner } from './PillarsBanner.component';
