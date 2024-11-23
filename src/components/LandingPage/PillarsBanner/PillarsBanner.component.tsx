@@ -12,8 +12,8 @@ export const PillarsBanner = () => {
             <span className="text-lightviolet">Filary </span>Echa Generacji
           </p>
         </div>
-        <div className="flex">
-          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] mr-[16px] flex w-full">
+        <div className="flex flex-wrap">
+          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] mr-[32px] mb-[16px] flex grow min-w-[220px]">
             <div className="w-[40px] h-[28px] m-[16px]">
               <Image
                 src={relationsIcon}
@@ -24,7 +24,7 @@ export const PillarsBanner = () => {
               <p>Relacje</p>
             </div>
           </div>
-          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] mx-[16px] flex w-full">
+          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] mr-[32px]  mb-[16px] flex grow min-w-[220px]">
             <div className="w-[40px] h-[28px] m-[16px]">
               <Image
                 src={loudspeakerIcon}
@@ -35,7 +35,7 @@ export const PillarsBanner = () => {
               <p>Głos</p>
             </div>
           </div>
-          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] ml-[16px] flex w-full">
+          <div className="bg-lightviolet/10 rounded-[32px] p-[16px] h-[100px] mr-[32px] mb-[16px] flex grow min-w-[220px]">
             <div className="w-[40px] h-[28px] m-[16px]">
               <Image src={targetIcon} alt="relations icon h-[28px] w-[40px]" />
             </div>
