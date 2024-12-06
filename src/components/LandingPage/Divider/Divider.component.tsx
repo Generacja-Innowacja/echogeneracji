@@ -7,29 +7,23 @@ type Props = {
   pillar: string;
 };
 
-export const Divider = ({ pillar }: Props) => {
-  let image, text;
+const ICONS = {
+  relacje: {
+    image: relationsIcon,
+    text: "Relacje",
+  },
+  glos: {
+    image: loudspeakerIcon,
+    text: "Głos",
+  },
+  wplyw: {
+    image: targetIcon,
+    text: "Wpływ",
+  },
+};
 
-  switch (pillar) {
-    case "relacje":
-      {
-        image = relationsIcon;
-        text = "Relacje";
-      }
-      break;
-    case "glos":
-      {
-        image = loudspeakerIcon;
-        text = "Głos";
-      }
-      break;
-    case "wplyw":
-      {
-        image = targetIcon;
-        text = "Wpływ";
-      }
-      break;
-  }
+export const Divider = ({ pillar }: Props) => {
+  const { image, text } = ICONS[pillar] || { image: null, text: "" };
 
   return (
     <>
