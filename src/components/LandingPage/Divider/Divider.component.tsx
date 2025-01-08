@@ -4,7 +4,7 @@ import targetIcon from "@/assets/svg/pillars/target.svg";
 import Image from "next/image";
 
 type Props = {
-  pillar: string;
+  pillar: 'relacje' | 'glos' | 'wplyw';
 };
 
 const ICONS = {
