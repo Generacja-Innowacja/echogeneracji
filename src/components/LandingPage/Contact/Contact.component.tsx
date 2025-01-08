@@ -28,16 +28,18 @@ export const Contact = () => {
               <p className="leading-[24px]">Primum movens Echa Generacji</p>
             </div>
           </div>
-          <div className="bg-white/10 rounded-[16px] text-[16px] font-bold w-fit p-[16px] flex flex-wrap">
-            <Image
-              className="mr-[8px]"
-              src={envelope}
-              width={21.33}
-              height={16}
-              alt=""
-            />
-            <p>bj@gi.org.pl</p>
-          </div>
+          <a href="mailto:bj[@gi](https://github.com/gi).org.pl">
+            <div className="bg-white/10 rounded-[16px] text-[16px] font-bold w-fit p-[16px] flex flex-wrap">
+              <Image
+                className="mr-[8px]"
+                src={envelope}
+                width={21.33}
+                height={16}
+                alt=""
+              />
+              <p>bj@gi.org.pl</p>
+            </div>
+          </a>
         </div>
       </div>
     </>
