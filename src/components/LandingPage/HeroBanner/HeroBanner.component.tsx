@@ -6,7 +6,7 @@ import Link from "next/link";
 export const HeroBanner = () => {
   return (
     <>
-      <div className="bg-gradient-to-r from-verydarkblue to-darkblue rounded-[32px] min-h-[312px] text-center w-full mx-[16px]">
+      <div className="bg-gradient-to-r from-verydarkblue to-darkblue rounded-[32px] min-h-[312px] text-center w-full">
         <div className="text-[24px] text-white h-[248px] leading-[60px] font-bold min-h-[120px] place-content-center sm:text-[40px]">
           <h1>Budujemy liderów i liderki przyszłości</h1>
         </div>

@@ -27,7 +27,7 @@ export const Divider = ({ pillar }: Props) => {
 
   return (
     <>
-      <div className="flex flex-wrap place-content-center">
+      <div className="flex flex-wrap place-content-center mt-[32px] mb-[32px]">
         <div className="h-[36px] pr-[16px]">
           <Image src={image} alt="icon h-[28px] w-[40px]" />
         </div>
@@ -35,7 +35,7 @@ export const Divider = ({ pillar }: Props) => {
           <h1>{text}</h1>
         </div>
         <div className="h-[36px] grow place-content-center">
-          <hr />
+          <hr style = {{color: "#B0B4BE"}}/>
         </div>
       </div>
     </>

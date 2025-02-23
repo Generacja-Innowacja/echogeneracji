@@ -52,12 +52,7 @@ export const PILLAR_DATA: Record<PillarName, Pillar> = {
       <div
         className={`text-white bg-[#42419D] p-[16px] w-fit font-bold text-[16px] rounded-[16px]`}
       >
-        <a
-          href="https://www.instagram.com/p/C74uLpqI5Mj/?img_index=1"
-          target="_blank"
-        >
-          Sprawdź artykuły
-        </a>
+        <a href="/articles">Sprawdź artykuły</a>
       </div>
     ),
   },
@@ -76,7 +71,12 @@ export const PILLAR_DATA: Record<PillarName, Pillar> = {
       <div
         className={`text-white bg-[#42419D] p-[16px] w-fit font-bold text-[16px] rounded-[16px]`}
       >
-        Stanowisko ws. EuroWyborów 2024
+        <a
+          href="https://www.instagram.com/p/C74uLpqI5Mj/?img_index=1"
+          target="_blank"
+        >
+          Stanowisko ws. EuroWyborów 2024
+        </a>
       </div>
     ),
   },
